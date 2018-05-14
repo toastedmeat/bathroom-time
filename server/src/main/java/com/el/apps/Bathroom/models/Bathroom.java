@@ -1,14 +1,10 @@
 package com.el.apps.Bathroom.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import org.springframework.data.annotation.Id;
 
-@Entity
 public class Bathroom {
 
     @Id
-    @GeneratedValue
     private Long id;
     private String name;
 

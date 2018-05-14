@@ -19,8 +19,8 @@ public class BathroomCommandLineRunner implements CommandLineRunner {
 
     @Override
     public void run(String... strings) throws Exception {
-        Stream.of("Kentucky Brunch Brand Stout", "Good Morning", "Very Hazy", "King Julius",
-                "Budweiser", "Coors Light", "PBR").forEach(name ->
+        Stream.of("Mike", "John", "Susan", "Charles",
+                "Fred", "Jen", "Michelle").forEach(name ->
                 repository.save(new Bathroom(name))
         );
         repository.findAll().forEach(System.out::println);
