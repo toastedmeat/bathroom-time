@@ -3,6 +3,9 @@ package com.el.apps.Bathroom;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import com.el.apps.Bathroom.models.Bathroom;
+import com.el.apps.Bathroom.repositories.BathroomRepository;
+
 import java.util.stream.Stream;
 
 @Component

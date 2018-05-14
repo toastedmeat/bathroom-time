@@ -1,8 +1,11 @@
-package com.el.apps.Bathroom;
+package com.el.apps.Bathroom.controllers;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.el.apps.Bathroom.models.Bathroom;
+import com.el.apps.Bathroom.repositories.BathroomRepository;
 
 import java.util.Collection;
 import java.util.stream.Collectors;

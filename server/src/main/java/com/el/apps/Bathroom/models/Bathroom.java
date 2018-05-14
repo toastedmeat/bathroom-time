@@ -1,4 +1,4 @@
-package com.el.apps.Bathroom;
+package com.el.apps.Bathroom.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
