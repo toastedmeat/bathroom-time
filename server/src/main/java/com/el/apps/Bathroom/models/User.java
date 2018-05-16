@@ -14,8 +14,12 @@ public class User {
 
     public User() {}
 
-    public User(String username) {
+    public User(String username, String first, String middle, String last, String email) {
         this.username = username;
+        this.firstName = first;
+        this.middleName = middle;
+        this.lastName = last;
+        this.email = email;
     }
 
     @Override
