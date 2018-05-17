@@ -2,17 +2,13 @@ package com.el.apps.Bathroom;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-
-import com.el.apps.Bathroom.models.Bathroom;
 import com.el.apps.Bathroom.models.User;
-import com.el.apps.Bathroom.repositories.BathroomRepository;
 import com.el.apps.Bathroom.repositories.UserRepository;
-
-import java.util.stream.Stream;
 
 @Component
 public class UserCommandLineRunner implements CommandLineRunner {
-
+	
+	
     private final UserRepository users;
 
     public UserCommandLineRunner(UserRepository users) {

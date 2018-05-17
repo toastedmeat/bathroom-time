@@ -26,20 +26,6 @@ public class UserController {
                 .collect(Collectors.toList());
     }
 
-    @PostMapping
-    ResponseEntity<?> add(@RequestBody User input) {
-        return this.repository
-                .map(() -> {
-                    User result = repository.save(
-                        new User(input.getUsername(), input.getFirstName(), input.getMiddleName()),
-                            input.getLastName(), input.getEmail());
-
-                    return ResponseEntity.created(user).build();
-                })
-                .orElse(ResponseEntity.noContent().build());
-
-    }
-
     private boolean isGreat(User User) {
         return !User.getUsername().equals("Mike") &&
                 !User.getUsername().equals("John") &&
