@@ -3,14 +3,15 @@ package com.el.apps.Bathroom.models;
 import org.springframework.data.annotation.Id;
 
 public class User {
-	
-	@Id
+    
+    @Id
     private String id;
     private String firstName;
     private String middleName;
     private String lastName;
     private String email;
     private String username;
+    private Review[] reviews;
 
     public User() {}
 
@@ -20,6 +21,11 @@ public class User {
         this.middleName = middle;
         this.lastName = last;
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "User{ TO DO } ";
     }
 
     public String getId() {
@@ -38,40 +44,43 @@ public class User {
         this.username = username;
     }
 
-	public String getLastName() {
-		return lastName;
-	}
+    public String getLastName() {
+        return lastName;
+    }
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public String getMiddleName() {
-		return middleName;
-	}
+    public String getMiddleName() {
+        return middleName;
+    }
 
-	public void setMiddleName(String middleName) {
-		this.middleName = middleName;
-	}
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
+    }
 
-	public String getFirstName() {
-		return firstName;
-	}
+    public String getFirstName() {
+        return firstName;
+    }
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
-    @Override
-    public String toString() {
-        return "User{ TO DO } ";
+    public Review[] getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(Review[] reviews) {
+        this.reviews = reviews;
     }
 }
