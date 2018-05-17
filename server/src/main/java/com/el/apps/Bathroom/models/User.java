@@ -11,6 +11,8 @@ public class User {
     private String lastName;
     private String email;
     private String username;
+    private String salt;
+    private String hashedPassword;
     private Review[] reviews;
 
     public User() {}
@@ -25,7 +27,15 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{ TO DO } ";
+        return "User { 
+            id=" + id +
+            "firstName=" + firstName +
+            "middleName=" + middleName +
+            "lastName=" + lastName +
+            "email=" + email +
+            "username=" + username +
+            "reviews=" + reviews +
+            "}";
     }
 
     public String getId() {

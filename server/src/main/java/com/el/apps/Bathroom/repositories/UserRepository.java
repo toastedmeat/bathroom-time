@@ -10,8 +10,9 @@ import com.el.apps.Bathroom.models.User;
 @RepositoryRestResource
 public interface UserRepository extends MongoRepository<User, String> {
 
-    public User findByUsername(String username);
-    public List<User> findByFirstName(String firstName);
-    public List<User> findByLastName(String lastName);
-    public List<User> findByEmail(String email);
+    public User findByUsernameAllIgnoreCase(String username);
+    public List<User> findByFirstNameAndLastNameAllIgnoreCase(String firstName, String lastName);
+    public List<User> findByFirstNameAllIgnoreCase(String firstName);
+    public List<User> findByLastNameAllIgnoreCase(String lastName);
+    public List<User> findByEmailAllIgnoreCase(String email);
 }

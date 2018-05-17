@@ -26,6 +26,12 @@ public class UserController {
                 .collect(Collectors.toList());
     }
 
+    @PostMapping("/login")
+    @CrossOrigin(origins = {"http://localhost:3000", "http://localhost:5000"})
+    public @ResponseBody ResponseEntity<String> login(@RequestParam("user") User user) {
+        return new ResponseEntity<String>("Login Response", HttpStatus.OK);
+    }
+
     private boolean isGreat(User User) {
         return !User.getUsername().equals("Mike") &&
                 !User.getUsername().equals("John") &&

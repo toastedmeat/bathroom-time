@@ -5,22 +5,21 @@ import org.springframework.data.annotation.Id;
 public class Review {
 	
 	@Id
-    private String id;
-
+  private String id;
 	private String user_id;
-    private String bathroom_id;
-    private String rating;
-    private String description;
-    private Review[] children;
+  private String bathroom_id;
+  private String rating;
+  private String description;
+  private Review[] children;
 
-    public Review() {}
+  public Review() {}
 
-    public Review(String description, String rating) {
-        this.description = description;
-        this.rating = rating;
-    }
+  public Review(String description, String rating) {
+      this.description = description;
+      this.rating = rating;
+  }
     
-    public String getUser_id() {
+  public String getUser_id() {
 		return user_id;
 	}
 
@@ -60,8 +59,15 @@ public class Review {
 		this.children = children;
 	}
 
-    @Override
-    public String toString() {
-        return "Rating { TO DO }";
-    }
+  @Override
+  public String toString() {
+      return "Rating { 
+      id=" + id +
+      "user_id=" + user_id +
+      "bathroom_id=" + bathroom_id +
+      "rating=" + rating +
+      "description=" + description +
+      "children=" + children +
+      " }";
+  }
 }
