@@ -22,14 +22,6 @@ public class User {
         this.email = email;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                '}';
-    }
-
     public String getId() {
         return id;
     }
@@ -77,4 +69,9 @@ public class User {
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
+
+    @Override
+    public String toString() {
+        return "User{ TO DO } ";
+    }
 }
