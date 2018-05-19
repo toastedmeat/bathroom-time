@@ -93,4 +93,21 @@ public class User {
     public void setReviews(Review[] reviews) {
         this.reviews = reviews;
     }
+
+	public String getSalt() {
+		return salt;
+	}
+
+	public void setSalt(String salt) {
+		this.salt = salt;
+	}
+
+	public String getHashedPassword() {
+		return hashedPassword;
+	}
+
+	public void setHashedPassword(String hashedPassword) {
+		this.hashedPassword = hashedPassword;
+	}
+    
 }
