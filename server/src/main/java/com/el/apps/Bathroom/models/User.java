@@ -27,15 +27,15 @@ public class User {
 
     @Override
     public String toString() {
-        return "User { 
-            id=" + id +
-            "firstName=" + firstName +
-            "middleName=" + middleName +
-            "lastName=" + lastName +
-            "email=" + email +
-            "username=" + username +
-            "reviews=" + reviews +
-            "}";
+        return "User { "+
+            "\nid=" + id +
+            "\nfirstName=" + firstName +
+            "\nmiddleName=" + middleName +
+            "\nlastName=" + lastName +
+            "\nemail=" + email +
+            "\nusername=" + username +
+            "\nreviews=" + reviews +
+            "\n}";
     }
 
     public String getId() {

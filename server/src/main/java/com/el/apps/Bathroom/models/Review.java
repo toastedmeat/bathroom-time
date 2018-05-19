@@ -61,8 +61,8 @@ public class Review {
 
   @Override
   public String toString() {
-      return "Rating { 
-      id=" + id +
+      return "Rating { " +
+      "id=" + id +
       "user_id=" + user_id +
       "bathroom_id=" + bathroom_id +
       "rating=" + rating +
