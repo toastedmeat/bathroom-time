@@ -16,6 +16,14 @@ public class User {
     private Review[] reviews;
 
     public User() {}
+    
+    public User(User user) {
+        this.username = user.getUsername();
+        this.firstName = user.getFirstName();
+        this.middleName = user.getMiddleName();
+        this.lastName = user.getLastName();
+        this.email = user.getEmail();
+    }
 
     public User(String username, String first, String middle, String last, String email) {
         this.username = username;

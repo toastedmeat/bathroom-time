@@ -37,6 +37,11 @@ public class UserCommandLineRunner implements CommandLineRunner {
 		System.out.println("User found with findByFirstName('Jessica'):");
 		System.out.println("--------------------------------");
 		System.out.println(users.findByFirstNameAllIgnoreCase("Jessica"));
+		
+		// fetch an individual user not found
+		System.out.println("User found with findByFirstName('Jessicah'):");
+		System.out.println("--------------------------------");
+		System.out.println(users.findByUsernameAllIgnoreCase("Jessicah"));
 
 		// find multiple users with last name qu
 		System.out.println("Users found with findByLastName('Qu'):");

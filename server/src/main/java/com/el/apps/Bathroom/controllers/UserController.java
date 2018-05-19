@@ -16,6 +16,7 @@ import java.util.Collection;
 import java.util.stream.Collectors;
 
 @RestController
+@CrossOrigin(origins = {"http://localhost:3000", "http://localhost:5000"})
 public class UserController {
     private UserRepository repository;
 
@@ -23,17 +24,25 @@ public class UserController {
         this.repository = repository;
     }
 
-    @GetMapping("/good-users")
-    @CrossOrigin(origins = {"http://localhost:3000", "http://localhost:5000"})
+    @GetMapping("/users/good-users")
     public Collection<User> goodUsers() {
         return repository.findAll().stream()
                 .filter(this::isGreat)
                 .collect(Collectors.toList());
     }
 
-    @PostMapping("/login")
-    @CrossOrigin(origins = {"http://localhost:3000", "http://localhost:5000"})
+    @PostMapping("/users/login")
     public @ResponseBody ResponseEntity<String> login(@RequestParam("user") User user) {
+    	if(repository.findByUsernameAllIgnoreCase(user.getUsername()) != null) {
+    		return new ResponseEntity<String>("Login Response", HttpStatus.OK);
+    	} else {
+    		return new ResponseEntity<String>("Login Response", HttpStatus.NOT_FOUND);
+    	}
+    }
+    
+    @PostMapping("/users/register")
+    public @ResponseBody ResponseEntity<String> register(@RequestParam("user") User user) {
+    	repository.save(new User(user));
         return new ResponseEntity<String>("Login Response", HttpStatus.OK);
     }
 
