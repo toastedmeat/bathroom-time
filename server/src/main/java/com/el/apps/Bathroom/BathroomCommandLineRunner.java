@@ -23,5 +23,6 @@ public class BathroomCommandLineRunner implements CommandLineRunner {
     	System.out.println("Running Bathroom Init");
     	repository.deleteAll();
     	repository.save(new Bathroom("Alice"));
+    	repository.save(new Bathroom("DC", "38.901625", "-77.017305"));
     }
 }

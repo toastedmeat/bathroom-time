@@ -17,6 +17,12 @@ public class Bathroom {
     public Bathroom(String name) {
         this.name = name;
     }
+    
+    public Bathroom(String name, String xCoordinate, String yCoordinate) {
+        this.name = name;
+        this.xCoordinate = xCoordinate;
+        this.yCoordinate = yCoordinate;
+    }
 
     public String getId() {
         return id;

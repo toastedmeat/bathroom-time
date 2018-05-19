@@ -2,6 +2,7 @@ package com.el.apps.Bathroom.controllers;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.el.apps.Bathroom.models.Bathroom;
@@ -24,6 +25,13 @@ public class BathroomController {
         return repository.findAll().stream()
                 .filter(this::isGreat)
                 .collect(Collectors.toList());
+    }
+    
+    @GetMapping("/nearby-bathrooms")
+    public Collection<Bathroom> nearbyBathrooms(@RequestParam(value="xCoordinate") String xCoord,
+    		@RequestParam(value="yCoordinate") String yCoord){
+    	return repository.findByXCoordinateAndYCoordinate(xCoord, yCoord).stream()
+    			.collect(Collectors.toList());
     }
 
     private boolean isGreat(Bathroom Bathroom) {
