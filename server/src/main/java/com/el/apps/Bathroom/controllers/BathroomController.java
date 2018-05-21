@@ -29,9 +29,9 @@ public class BathroomController {
     
     @GetMapping("/nearby-bathrooms")
     public Collection<Bathroom> nearbyBathrooms(@RequestParam(value="xCoordinate") double xCoord,
-    		@RequestParam(value="yCoordinate") double yCoord){
-    	return repository.findByXCoordinateAndYCoordinate(xCoord, yCoord).stream()
-    			.collect(Collectors.toList());
+    		@RequestParam(value="yCoordinate") double yCoord, @RequestParam(value="range") double range){
+    	return repository.findByXCoordinateBetweenAndYCoordinateBetween(xCoord-range, xCoord+range, 
+    			yCoord-range, yCoord+range).stream().collect(Collectors.toList());
     }
 
     private boolean isGreat(Bathroom Bathroom) {

@@ -10,4 +10,6 @@ import com.el.apps.Bathroom.models.Bathroom;
 @RepositoryRestResource
 public interface BathroomRepository extends MongoRepository<Bathroom, String> {
 	public List<Bathroom> findByXCoordinateAndYCoordinate(double xCoord, double yCoord);
+	public List<Bathroom> findByXCoordinateBetweenAndYCoordinateBetween(double lowerX, double upperX, 
+			double lowerY, double upperY);
 }
