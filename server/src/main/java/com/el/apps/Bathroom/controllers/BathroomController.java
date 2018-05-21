@@ -28,8 +28,8 @@ public class BathroomController {
     }
     
     @GetMapping("/nearby-bathrooms")
-    public Collection<Bathroom> nearbyBathrooms(@RequestParam(value="xCoordinate") String xCoord,
-    		@RequestParam(value="yCoordinate") String yCoord){
+    public Collection<Bathroom> nearbyBathrooms(@RequestParam(value="xCoordinate") float xCoord,
+    		@RequestParam(value="yCoordinate") float yCoord){
     	return repository.findByXCoordinateAndYCoordinate(xCoord, yCoord).stream()
     			.collect(Collectors.toList());
     }

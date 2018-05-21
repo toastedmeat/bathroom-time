@@ -7,9 +7,10 @@ public class Bathroom {
     @Id
     private String id;
     private String name;
-    private String xCoordinate;
-    private String yCoordinate;
+    private float xCoordinate;
+    private float yCoordinate;
     private Review[] reviews;
+    private Tag[] tags;
     private double rating;
 
     public Bathroom() {}
@@ -18,10 +19,18 @@ public class Bathroom {
         this.name = name;
     }
     
-    public Bathroom(String name, String xCoordinate, String yCoordinate) {
+    public Bathroom(String name, float xCoordinate, float yCoordinate) {
         this.name = name;
         this.xCoordinate = xCoordinate;
         this.yCoordinate = yCoordinate;
+    }
+
+	@Override
+    public String toString() {
+        return "Bathroom{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
     }
 
     public String getId() {
@@ -40,19 +49,19 @@ public class Bathroom {
         this.name = name;
     }
 
-    public String getxCoordinate() {
+    public float getxCoordinate() {
 		return xCoordinate;
 	}
 
-	public void setxCoordinate(String xCoordinate) {
+	public void setxCoordinate(float xCoordinate) {
 		this.xCoordinate = xCoordinate;
 	}
 
-	public String getyCoordinate() {
+	public float getyCoordinate() {
 		return yCoordinate;
 	}
 
-	public void setyCoordinate(String yCoordinate) {
+	public void setyCoordinate(float yCoordinate) {
 		this.yCoordinate = yCoordinate;
 	}
 
@@ -72,11 +81,11 @@ public class Bathroom {
 		this.rating = rating;
 	}
 
-	@Override
-    public String toString() {
-        return "Bathroom{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
-    }
+	public Tag[] getTags() {
+		return tags;
+	}
+
+	public void setTags(Tag[] tags) {
+		this.tags = tags;
+	}
 }
