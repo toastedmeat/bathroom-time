@@ -36,7 +36,7 @@ public class UserController {
     	if(repository.findByUsernameAllIgnoreCase(user.getUsername()) != null) {
     		return new ResponseEntity<String>("Login Response", HttpStatus.OK);
     	} else {
-    		return new ResponseEntity<String>("Login Response", HttpStatus.NOT_FOUND);
+    		return new ResponseEntity<String>("Login Response", HttpStatus.UNAUTHORIZED);
     	}
     }
     
