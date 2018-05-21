@@ -7,8 +7,8 @@ public class Bathroom {
     @Id
     private String id;
     private String name;
-    private float xCoordinate;
-    private float yCoordinate;
+    private double xCoordinate;
+    private double yCoordinate;
     private Review[] reviews;
     private Tag[] tags;
     private double rating;
@@ -19,7 +19,7 @@ public class Bathroom {
         this.name = name;
     }
     
-    public Bathroom(String name, float xCoordinate, float yCoordinate) {
+    public Bathroom(String name, double xCoordinate, double yCoordinate) {
         this.name = name;
         this.xCoordinate = xCoordinate;
         this.yCoordinate = yCoordinate;
@@ -49,19 +49,19 @@ public class Bathroom {
         this.name = name;
     }
 
-    public float getxCoordinate() {
+    public double getxCoordinate() {
 		return xCoordinate;
 	}
 
-	public void setxCoordinate(float xCoordinate) {
+	public void setxCoordinate(double xCoordinate) {
 		this.xCoordinate = xCoordinate;
 	}
 
-	public float getyCoordinate() {
+	public double getyCoordinate() {
 		return yCoordinate;
 	}
 
-	public void setyCoordinate(float yCoordinate) {
+	public void setyCoordinate(double yCoordinate) {
 		this.yCoordinate = yCoordinate;
 	}
 
