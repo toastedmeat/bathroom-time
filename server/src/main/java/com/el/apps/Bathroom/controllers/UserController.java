@@ -28,7 +28,7 @@ public class UserController {
     private UserRepository repository;
     
     // Get all
-    @GetMapping("/users/")
+    @GetMapping("/user/")
     public ResponseEntity<Collection<User>> getAllUsers() {
         Collection<User> users = repository.findAll().stream().collect(Collectors.toList());
         if(users.isEmpty())
@@ -37,7 +37,7 @@ public class UserController {
     }
     
     // get single
-    @GetMapping("/users/{username}")
+    @GetMapping("/user/{username}")
     public ResponseEntity<?> getUserByUsername(@PathVariable("username") String username) {
         User user = repository.findByUsernameAllIgnoreCase(username);
         if(user == null)
@@ -47,7 +47,7 @@ public class UserController {
     }
     
     // post
-    @PostMapping("/users/")
+    @PostMapping("/user/")
     public ResponseEntity<?> createUser(@RequestBody User user){
         if(repository.findByUsernameAllIgnoreCase(user.getUsername()) != null)
             return new ResponseEntity<String>("Unable to create user, user with username " +
@@ -58,7 +58,7 @@ public class UserController {
     }
     
     // update
-    @PutMapping("/users/{username}")
+    @PutMapping("/user/{username}")
     public ResponseEntity<?> updateUser(@PathVariable("username") String username, @RequestBody User updates){
         User user = repository.findByUsernameAllIgnoreCase(username);
         if(user == null)
@@ -74,7 +74,7 @@ public class UserController {
     }
     
     // delete single
-    @DeleteMapping("/users/{username}")
+    @DeleteMapping("/user/{username}")
     public ResponseEntity<?> deleteUser(@PathVariable("username") String username){
         User user = repository.findByUsernameAllIgnoreCase(username);
         if(user == null)
@@ -86,14 +86,14 @@ public class UserController {
     
     // delete all
 
-    @GetMapping("/users/good-users")
+    @GetMapping("/user/good-users")
     public Collection<User> goodUsers() {
         return repository.findAll().stream()
                 .filter(this::isGreat)
                 .collect(Collectors.toList());
     }
 
-    @PostMapping("/users/login")
+    @PostMapping("/user/login")
     public @ResponseBody ResponseEntity<String> login(@RequestParam("user") User user) {
         if(repository.findByUsernameAllIgnoreCase(user.getUsername()) != null) {
             return new ResponseEntity<String>("Login Response", HttpStatus.OK);
@@ -102,7 +102,7 @@ public class UserController {
         }
     }
     
-    @PostMapping("/users/register")
+    @PostMapping("/user/register")
     public @ResponseBody ResponseEntity<String> register(@RequestParam("user") User user) {
         repository.save(user);
         return new ResponseEntity<String>("Login Response", HttpStatus.OK);
