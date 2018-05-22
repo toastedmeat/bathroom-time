@@ -4,10 +4,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import com.el.apps.Bathroom.models.Bathroom;
-import com.el.apps.Bathroom.models.User;
 import com.el.apps.Bathroom.repositories.BathroomRepository;
-
-import java.util.stream.Stream;
 
 @Component
 public class BathroomCommandLineRunner implements CommandLineRunner {
@@ -20,9 +17,9 @@ public class BathroomCommandLineRunner implements CommandLineRunner {
 
     @Override
     public void run(String... strings) throws Exception {
-    	System.out.println("Running Bathroom Init");
-    	repository.deleteAll();
-    	repository.save(new Bathroom("Alice"));
-    	repository.save(new Bathroom("DC", 38.901625, -77.017305));
+        System.out.println("Running Bathroom Init");
+        repository.deleteAll();
+        repository.save(new Bathroom("Alice"));
+        repository.save(new Bathroom("DC", 38.901625, -77.017305, 0));
     }
 }
