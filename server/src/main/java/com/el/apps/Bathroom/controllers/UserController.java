@@ -58,7 +58,7 @@ public class UserController {
     }
     
     // update
-    @PutMapping("/users/username")
+    @PutMapping("/users/{username}")
     public ResponseEntity<?> updateUser(@PathVariable("username") String username, @RequestBody User updates){
         User user = repository.findByUsernameAllIgnoreCase(username);
         if(user == null)
@@ -74,7 +74,7 @@ public class UserController {
     }
     
     // delete single
-    @DeleteMapping("/users/username")
+    @DeleteMapping("/users/{username}")
     public ResponseEntity<?> deleteUser(@PathVariable("username") String username){
         User user = repository.findByUsernameAllIgnoreCase(username);
         if(user == null)
