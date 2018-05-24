@@ -7,10 +7,8 @@ public class Bathroom {
     @Id
     private String id;
     private String name;
-    private double xCoordinate;
-    private double yCoordinate;
-    private Review[] reviews;
-    private Tag[] tags;
+    private double latitude;
+    private double longitude;
     private double rating;
 
     public Bathroom() {}
@@ -19,13 +17,14 @@ public class Bathroom {
         this.name = name;
     }
     
-    public Bathroom(String name, double xCoordinate, double yCoordinate) {
+    public Bathroom(String name, double latitude, double longitude, double rating) {
         this.name = name;
-        this.xCoordinate = xCoordinate;
-        this.yCoordinate = yCoordinate;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.rating = rating;
     }
 
-	@Override
+    @Override
     public String toString() {
         return "Bathroom{" +
                 "id=" + id +
@@ -49,43 +48,27 @@ public class Bathroom {
         this.name = name;
     }
 
-    public double getxCoordinate() {
-		return xCoordinate;
-	}
+    public double getLongitude() {
+        return longitude;
+    }
 
-	public void setxCoordinate(double xCoordinate) {
-		this.xCoordinate = xCoordinate;
-	}
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
 
-	public double getyCoordinate() {
-		return yCoordinate;
-	}
+    public double getLatitude() {
+        return latitude;
+    }
 
-	public void setyCoordinate(double yCoordinate) {
-		this.yCoordinate = yCoordinate;
-	}
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
 
-	public Review[] getReviews() {
-		return reviews;
-	}
+    public double getRating() {
+        return rating;
+    }
 
-	public void setReviews(Review[] reviews) {
-		this.reviews = reviews;
-	}
-
-	public double getRating() {
-		return rating;
-	}
-
-	public void setRating(double rating) {
-		this.rating = rating;
-	}
-
-	public Tag[] getTags() {
-		return tags;
-	}
-
-	public void setTags(Tag[] tags) {
-		this.tags = tags;
-	}
+    public void setRating(double rating) {
+        this.rating = rating;
+    }
 }

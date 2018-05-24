@@ -9,7 +9,8 @@ import com.el.apps.Bathroom.models.Bathroom;
 
 @RepositoryRestResource
 public interface BathroomRepository extends MongoRepository<Bathroom, String> {
-	public List<Bathroom> findByXCoordinateAndYCoordinate(double xCoord, double yCoord);
-	public List<Bathroom> findByXCoordinateBetweenAndYCoordinateBetween(double lowerX, double upperX, 
-			double lowerY, double upperY);
+    public Bathroom findByName(String name);
+    public List<Bathroom> findByLatitudeAndLongitude(double latitude, double longitude);
+    public List<Bathroom> findByLatitudeBetweenAndLongitudeBetween(
+        double lowerLatitude, double upperLatitude, double lowerLongitude, double upperLongitude);
 }
