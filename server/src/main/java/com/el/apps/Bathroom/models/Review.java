@@ -24,6 +24,13 @@ public class Review {
       this.rating = rating;
     }
 
+    public Review(String description, String rating, User user, Bathroom bathroom) {
+      this.description = description;
+      this.rating = rating;
+      this.user = user;
+      this.bathroom = bathroom;
+    }
+
     public Review(String description, String rating, User user, Bathroom bathroom, List<Review> children) {
       this.description = description;
       this.rating = rating;

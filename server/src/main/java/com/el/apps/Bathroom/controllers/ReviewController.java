@@ -3,7 +3,6 @@ package com.el.apps.Bathroom.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,7 +20,6 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RestController
-@CrossOrigin(origins = {"http://localhost:3000", "http://localhost:5000"})
 public class ReviewController {
     
     @Autowired
@@ -49,9 +47,6 @@ public class ReviewController {
     // post
     @PostMapping("/review/")
     public ResponseEntity<?> createReview(@RequestBody Review review){
-        if(repository.findById(review.getId()) != null)
-            return new ResponseEntity<String>("Unable to create review, review with id " +
-                    "{ " + review.getId() + " } already exists", HttpStatus.CONFLICT);
         Review newReview = repository.save(review);
 
         return new ResponseEntity<Review>(newReview, HttpStatus.CREATED);
