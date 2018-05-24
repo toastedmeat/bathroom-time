@@ -1,5 +1,7 @@
 package com.el.apps.Bathroom.models;
 
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
 
 public class User {
@@ -13,7 +15,7 @@ public class User {
     private String username;
     private String salt;
     private String hashedPassword;
-    private Review[] reviews;
+    private List<Review> reviews;
 
     public User() {}
     
@@ -94,11 +96,11 @@ public class User {
         this.firstName = firstName;
     }
 
-    public Review[] getReviews() {
+    public List<Review> getReviews() {
         return reviews;
     }
 
-    public void setReviews(Review[] reviews) {
+    public void setReviews(List<Review> reviews) {
         this.reviews = reviews;
     }
 
