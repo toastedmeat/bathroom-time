@@ -80,7 +80,7 @@ public class TagController {
     }
     
     // delete all by bathroom id
-    @DeleteMapping("/review/{bathroomId}")
+    @DeleteMapping("/tag/{bathroomId}")
     public ResponseEntity<?> deleteAllTagsByBathroomId(@PathVariable("bathroomId") String bathroomId){
         List<Tag> tags = repository.findByBathroomId(bathroomId);
         if(tags.isEmpty())
