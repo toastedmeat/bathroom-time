@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './css/App.css';
-import BathroomList from 'BathroomList';
+import BathroomList from './BathroomList';
+import LoginPage from './LoginPage';
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <BathroomList />
+        <LoginPage />
       </div>
     );
   }
