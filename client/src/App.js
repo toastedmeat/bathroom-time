@@ -1,11 +1,9 @@
-import * as React from 'react';
-import './App.css';
-import BathroomList from './BathroomList';
-
+import React, { Component } from 'react';
 import logo from './logo.svg';
+import './css/App.css';
 
-class App extends React.Component<{}, any> {
-  public render() {
+class App extends Component {
+  render() {
     return (
       <div className="App">
         <header className="App-header">
@@ -16,8 +14,6 @@ class App extends React.Component<{}, any> {
       </div>
     );
   }
-
-
 }
 
 export default App;

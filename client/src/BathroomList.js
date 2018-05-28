@@ -29,7 +29,7 @@ class BathroomList extends React.Component<IBathroomListProps, IBathroomListStat
   public componentDidMount() {
     this.setState({isLoading: true});
 
-    fetch('http://localhost:8080/good-bathrooms')
+    fetch('http://localhost:8080/bathroom/good')
       .then(response => response.json())
       .then(data => this.setState({bathrooms: data, isLoading: false}));
   }

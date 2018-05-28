@@ -1,17 +1,11 @@
 {
-  "short_name": "BathroomTime",
-  "name": "Bathroom Time",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
       "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
-    },
-    {
-      "src": "toilet-paper.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "credits" : "<div>Icons made by <a href='https://www.flaticon.com/authors/kiranshastry' title='Kiranshastry'>Kiranshastry</a> from <a href='https://www.flaticon.com/' title='Flaticon'>www.flaticon.com</a> is licensed by <a href='http://creativecommons.org/licenses/by/3.0/' title='Creative Commons BY 3.0' target='_blank'>CC 3.0 BY</a></div>"
     }
   ],
   "start_url": "./index.html",
