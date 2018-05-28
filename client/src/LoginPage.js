@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Button, Checkbox, Col, ControlLabel, Form, FormControl, FormGroup} from 'react-bootstrap';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 class LoginPage extends React.Component{
 
@@ -42,37 +42,20 @@ class LoginPage extends React.Component{
     }
 
     return (
-      <Form horizontal={true}>
-        <FormGroup controlId="formHorizontalEmail">
-          <Col componentClass={ControlLabel} sm={2}>
-            Email
-          </Col>
-          <Col sm={10}>
-            <FormControl type="email" placeholder="Email" />
-          </Col>
-        </FormGroup>
-
-        <FormGroup controlId="formHorizontalPassword">
-          <Col componentClass={ControlLabel} sm={2}>
-            Password
-          </Col>
-          <Col sm={10}>
-            <FormControl type="password" placeholder="Password" />
-          </Col>
-        </FormGroup>
-
-        <FormGroup>
-          <Col smOffset={2} sm={10}>
-            <Checkbox>Remember me</Checkbox>
-          </Col>
-        </FormGroup>
-
-        <FormGroup>
-          <Col smOffset={2} sm={10}>
-            <Button type="submit">Sign in</Button>
-          </Col>
-        </FormGroup>
-      </Form>
+      <div className="container">
+        <Form>
+          <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+            <Label for="exampleEmail" className="mr-sm-2">Email</Label>
+            <Input type="email" name="email" id="exampleEmail" placeholder="Email" />
+          </FormGroup>
+          <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+            <Label for="examplePassword" className="mr-sm-2">Password</Label>
+            <Input type="password" name="password" id="examplePassword" placeholder="Password" />
+          </FormGroup>
+          <div className="mt-5"></div>
+          <Button>Submit</Button>
+        </Form>
+      </div>
     );
   }
 }
