@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './css/App.css';
+import BathroomList from 'BathroomList';
 
 class App extends Component {
   render() {
