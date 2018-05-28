@@ -1,23 +1,10 @@
 import * as React from 'react';
 import GiphyImage from './GiphyImage';
 
-interface IBathroom {
-  id: string;
-  name: string;
-}
 
-// tslint:disable-next-line:no-empty-interface
-interface IBathroomListProps {
-}
+class BathroomList extends React.Component {
 
-interface IBathroomListState {
-  bathrooms: IBathroom[];
-  isLoading: boolean;
-}
-
-class BathroomList extends React.Component<IBathroomListProps, IBathroomListState> {
-
-  constructor(props: IBathroomListProps) {
+  constructor(props) {
     super(props);
 
     this.state = {
@@ -26,7 +13,7 @@ class BathroomList extends React.Component<IBathroomListProps, IBathroomListStat
     };
   }
 
-  public componentDidMount() {
+  componentDidMount() {
     this.setState({isLoading: true});
 
     fetch('http://localhost:8080/bathroom/good')
@@ -34,7 +21,7 @@ class BathroomList extends React.Component<IBathroomListProps, IBathroomListStat
       .then(data => this.setState({bathrooms: data, isLoading: false}));
   }
 
-  public render() {
+  render() {
     const {bathrooms, isLoading} = this.state;
 
     if (isLoading) {
@@ -44,7 +31,7 @@ class BathroomList extends React.Component<IBathroomListProps, IBathroomListStat
     return (
       <div>
         <h2>Bathroom List</h2>
-        {bathrooms.map((bathroom: IBathroom) =>
+        {bathrooms.map((bathroom) =>
           <div key={bathroom.id}>
             {bathroom.name}<br/>
             <GiphyImage name={bathroom.name}/>

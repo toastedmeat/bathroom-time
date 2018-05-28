@@ -1,16 +1,7 @@
 import * as React from 'react';
 
-interface IGiphyImageProps {
-  name: string;
-}
-
-interface IGiphyImageState {
-  giphyUrl: string;
-  isLoading: boolean;
-}
-
-class GiphyImage extends React.Component<IGiphyImageProps, IGiphyImageState> {
-  constructor(props: IGiphyImageProps) {
+class GiphyImage extends React.Component {
+  constructor(props) {
     super(props);
 
     this.state = {
@@ -19,7 +10,7 @@ class GiphyImage extends React.Component<IGiphyImageProps, IGiphyImageState> {
     };
   }
 
-  public componentDidMount() {
+  componentDidMount() {
     const giphyApi = '//api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&limit=1&q=';
 
     fetch(giphyApi + this.props.name)
@@ -35,7 +26,7 @@ class GiphyImage extends React.Component<IGiphyImageProps, IGiphyImageState> {
       });
   }
 
-  public render() {
+  render() {
     const {giphyUrl, isLoading} = this.state;
 
     if (isLoading) {
