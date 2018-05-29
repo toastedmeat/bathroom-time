@@ -92,7 +92,7 @@ public class UserController {
     }
 
     @PostMapping("/user/login")
-    public @ResponseBody ResponseEntity<String> login(@RequestParam("user") User user) {
+    public @ResponseBody ResponseEntity<String> login(@RequestBody User user) {
         if(repository.findByUsernameAllIgnoreCase(user.getUsername()) != null) {
             return new ResponseEntity<String>("Login Response", HttpStatus.OK);
         } else {
