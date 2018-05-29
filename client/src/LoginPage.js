@@ -34,6 +34,10 @@ class LoginPage extends React.Component{
     this.setState({ value: e.target.value });
   }
 
+  onSubmitLoginClick() {
+
+  }
+
   render() {
     const isLoading = this.state.isLoading;
 
@@ -46,14 +50,14 @@ class LoginPage extends React.Component{
         <Form>
           <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
             <Label for="exampleEmail" className="mr-sm-2">Email</Label>
-            <Input type="email" name="email" id="exampleEmail" placeholder="Email" />
+            <Input type="email" name="email" id="loginEmail" placeholder="Email" />
           </FormGroup>
           <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
             <Label for="examplePassword" className="mr-sm-2">Password</Label>
-            <Input type="password" name="password" id="examplePassword" placeholder="Password" />
+            <Input type="password" name="password" id="loginPassword" placeholder="Password" />
           </FormGroup>
           <div className="mt-5"></div>
-          <Button>Submit</Button>
+          <Button onClick={() => this.onSubmitLoginClick()}>Submit</Button>
         </Form>
       </div>
     );
