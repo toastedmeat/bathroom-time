@@ -3,6 +3,7 @@ package com.el.apps.Bathroom.models;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 
 public class User {
     
@@ -11,7 +12,11 @@ public class User {
     private String firstName;
     private String middleName;
     private String lastName;
+    
+    @Indexed(unique = true)
     private String email;
+    
+    @Indexed(unique = true)
     private String username;
     private String salt;
     private String hashedPassword;
