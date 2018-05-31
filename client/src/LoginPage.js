@@ -11,7 +11,6 @@ class LoginPage extends React.Component{
 
     this.state = {
       isLoading: false,
-      value: '',
       username: '',
       password: ''
     };
@@ -23,14 +22,6 @@ class LoginPage extends React.Component{
     fetch('http://localhost:8080/api/profile/users')
       .then(response => response.json())
       .then(data => this.setState({isLoading: false}));
-  }
-
-  getValidationState() {
-    const length = this.state.value.length;
-    if (length > 10) { return 'success'; }
-    else if (length > 5) { return 'warning'; }
-    else if (length > 0) { return 'error'; }
-    return null;
   }
 
   handleUsernameChange(e) {
@@ -52,7 +43,9 @@ class LoginPage extends React.Component{
         username: this.state.username,
         password: this.state.password,
       })
-    })
+    }).then(function(results){
+      console.log(results);
+    });
   }
 
   render() {
@@ -74,7 +67,7 @@ class LoginPage extends React.Component{
             <Input value={this.state.password} onChange={(e) => this.handlePasswordChange(e)} type="password" name="password" id="loginPassword" placeholder="Password" />
           </FormGroup>
           <div className="mt-5"></div>
-          <Button onClick={() => this.onSubmitLoginClick()}>Submit</Button>
+          <Button className="float-right" onClick={() => {this.onSubmitLoginClick(); this.props.toggleModal()}}>Submit</Button>
         </Form>
       </div>
     );
