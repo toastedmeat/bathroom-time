@@ -24,7 +24,7 @@ public class UserCommandLineRunner implements CommandLineRunner {
         users.save(new User("jzeng", "Jessica", null, "Zeng", "jessicazengg@gmail.com"));
         users.save(new User("hqu", "Haibin", null, "qu", "haibinqu@hotmail.com"));
         users.save(new User("bqu", "Bob", null, "qu", "bobqu@hotmail.com"));
-        users.save(new User("hqu", "Harris", null, "qu", "harrisqu@hotmail.com"));
+        users.save(new User("haqu", "Harris", null, "qu", "harrisqu@hotmail.com"));
         
         System.out.println("Customers found with findAll():");
         System.out.println("-------------------------------");
