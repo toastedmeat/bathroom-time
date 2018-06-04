@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import RegisterButton from './RegisterButton';
 
 class LoginPage extends React.Component{
 
@@ -17,11 +18,6 @@ class LoginPage extends React.Component{
   }
 
   componentDidMount() {
-    this.setState({isLoading: true});
-
-    fetch('http://localhost:8080/api/profile/users')
-      .then(response => response.json())
-      .then(data => this.setState({isLoading: false}));
   }
 
   handleUsernameChange(e) {
@@ -49,12 +45,6 @@ class LoginPage extends React.Component{
   }
 
   render() {
-    const isLoading = this.state.isLoading;
-
-    if (isLoading) {
-      return <p>Loading...</p>;
-    }
-
     return (
       <div className="container">
         <Form>
@@ -68,6 +58,7 @@ class LoginPage extends React.Component{
           </FormGroup>
           <div className="mt-5"></div>
           <Button className="float-right" onClick={() => {this.onSubmitLoginClick(); this.props.toggleModal()}}>Submit</Button>
+          <RegisterButton username={this.props.username} password={this.props.password} toggleModal={() => this.props.toggleModal()}></RegisterButton>
         </Form>
       </div>
     );
