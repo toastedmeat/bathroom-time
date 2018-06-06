@@ -1,13 +1,17 @@
 import * as React from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
-class RegisterButton extends React.Component{
+class RegisterPage extends React.Component{
 
   constructor(props) {
     super(props);
 
     this.state = {
-      email: '',
+      firstName: '',
+      lastName: '',
+      username: '',
+      password: '',
+      email: ''
     };
   }
 
@@ -32,9 +36,9 @@ class RegisterButton extends React.Component{
 
   render() {
     return (
-      <Button className="mr-1 float-right" onClick={() => {this.onRegisterClick(); this.props.toggleModal()}}>Register</Button>
+      <Button className="mr-1 float-right" onClick={() => {this.onRegisterClick(); this.props.toggleRegister()}}>Register</Button>
     );
   }
 }
 
-export default RegisterButton;
+export default RegisterPage;

@@ -3,21 +3,29 @@ import logo from './logo.svg';
 import './css/App.css';
 import BathroomList from './BathroomList';
 import LoginPage from './LoginPage';
+import RegisterPage from './RegisterPage';
 import {Button, Modal, ModalBody, ModalHeader} from 'reactstrap';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      modal: false
+      loginModal: false,
+      registerModal: false
     };
 
-    this.toggle = this.toggle.bind(this);
+    this.toggleLogin = this.toggleLogin.bind(this);
   }
 
-  toggle() {
+  toggleLogin() {
     this.setState({
-      modal: !this.state.modal
+      loginModal: !this.state.loginModal
+    });
+  }
+
+  toggleRegister() {
+    this.setState({
+      registerModal: !this.state.registerModal
     });
   }
 
@@ -26,11 +34,15 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <div className="float-right">
-            <Button color="danger" onClick={this.toggle}>Login</Button>
-            <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-              <ModalHeader toggle={this.toggle}>Login</ModalHeader>
+            <Button color="danger" onClick={this.toggleLogin}>Login</Button>
+            <Modal isOpen={this.state.loginModal || this.state.registerModal} toggle={this.toggleLogin || this.toggleRegister} className={this.props.className}>
+              <ModalHeader toggle={this.toggleLogin}>
+                {this.state.loginModal ? 'Login' : null}
+                {this.state.registerModal ? 'Register' : null}
+              </ModalHeader>
               <ModalBody>
-                <LoginPage toggleModal={() => this.toggle()}/>
+                {this.state.loginModal ? <LoginPage toggleLogin={() => this.toggleLogin()} toggleRegister={() => this.toggleRegister()}/> : null}
+                {this.state.registerModal ? <RegisterPage toggleRegister={() => this.toggleRegister()}/> : null}
               </ModalBody>
             </Modal>
           </div>

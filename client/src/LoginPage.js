@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
-import RegisterButton from './RegisterButton';
 
 class LoginPage extends React.Component{
 
@@ -57,8 +56,8 @@ class LoginPage extends React.Component{
             <Input value={this.state.password} onChange={(e) => this.handlePasswordChange(e)} type="password" name="password" id="loginPassword" placeholder="Password" />
           </FormGroup>
           <div className="mt-5"></div>
-          <Button className="float-right" onClick={() => {this.onSubmitLoginClick(); this.props.toggleModal()}}>Submit</Button>
-          <RegisterButton username={this.props.username} password={this.props.password} toggleModal={() => this.props.toggleModal()}></RegisterButton>
+          <Button className="float-right btn-danger" onClick={() => {this.onSubmitLoginClick(); this.props.toggleLogin()}}>Submit</Button>
+          <Button className="float-right mr-1 btn-info" onClick={() => {this.props.toggleLogin(); this.props.toggleRegister()}}>Register</Button>
         </Form>
       </div>
     );
