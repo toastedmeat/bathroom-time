@@ -92,8 +92,8 @@ public class UserController {
     }
 
     @PostMapping("/user/login")
-    public @ResponseBody ResponseEntity<?> login(@RequestParam("username") String username, @RequestParam("password") String password) {
-        User dbuser = repository.findByUsernameAllIgnoreCase(username);
+    public @ResponseBody ResponseEntity<?> login(@RequestBody User user) {
+        User dbuser = repository.findByUsernameAllIgnoreCase(user.getUsername());
         if(dbuser != null) {
             return new ResponseEntity<User>(dbuser, HttpStatus.OK);
         } else {
@@ -102,7 +102,7 @@ public class UserController {
     }
     
     @PostMapping("/user/register")
-    public @ResponseBody ResponseEntity<String> register(@RequestParam("user") User user) {
+    public @ResponseBody ResponseEntity<String> register(@RequestBody User user) {
         repository.save(user);
         return new ResponseEntity<String>("Login Response", HttpStatus.OK);
     }
