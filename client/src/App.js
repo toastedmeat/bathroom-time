@@ -46,8 +46,8 @@ class App extends Component {
               </ModalBody>
             </Modal>
           </div>
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <img src="toilet-paper.png" className="App-logo" alt="logo" />
+          <h1 className="App-title">Welcome to Bathroom Time</h1>
         </header>
         <BathroomList />
       </div>
